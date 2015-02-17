@@ -26,14 +26,14 @@ public class Student
 
     public boolean enroll(Module newModule)
     {
-        if (this.getCredits() + newModule.getCreds() > 120)
+        if (this.getCredits() + newModule.getCredits() > 120)
         {
             return false; //This module gives them too many credits!
         }
         else
         {
             this.modules.add(newModule);
-            this.credits+=newModule.getCreds();
+            this.credits+=newModule.getCredits();
             return true;
         }
     }
@@ -42,7 +42,7 @@ public class Student
     {
         if (this.modules.contains(existingModule))
         {
-            this.credits-=existingModule.getCreds();
+            this.credits-=existingModule.getCredits();
             this.modules=this.modules.remove(existingModule);
             return true;
         }
@@ -52,7 +52,7 @@ public class Student
         }
     }
     
-    public boolean getCreds()
+    public boolean getCredits()
     {
         return this.credits;
     }
