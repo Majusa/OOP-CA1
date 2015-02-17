@@ -20,6 +20,8 @@ public class Student
         this.surname = surname;
         this.id = id;
         this.address = address;
+        this.modules = new ObjectArrayList();
+        this.credits = 0;
     }
 
     public boolean enroll(Module newModule)
