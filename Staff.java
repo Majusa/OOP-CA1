@@ -1,10 +1,10 @@
 public class Staff {
-	public String forename;
-	public String surname;
-	public long id;
-	public String address;
-	public ObjectArrayList listLecture;
-	public ObjectArrayList listCoord;
+	String forename;
+	String surname;
+	long id;
+	String address;
+	ObjectArrayList lectureModules;
+	ObjectArrayList coordinateModules;
 	
 	public Staff(String forename, String surname, long id, String address) {
 		this.forename=forename;
@@ -15,17 +15,17 @@ public class Staff {
 		listCoord = new ObjectArrayList();
 	}
 	
-	public void AppendModuleLecture(Module module) {
-		//append module
+	public void AppendModuleLecture(Module newModule) {
+		lectureModules.add(newModule);
 	}
 	
-	public boolean RemoveModuleLecture(Module module) {
+	public boolean RemoveModuleLecture(Module existingModule) {
 		//check they lecture it - return false
 		//remove it return true
 	}
 	
-	public void AppendModuleCoord(Module module) {
-		//append module
+	public void AppendModuleCoord(Module newmodule) {
+		coordinateModules.add(newModule);
 	}
 	
 	public boolean RemoveModuleCoord(Module module) {
