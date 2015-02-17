@@ -52,7 +52,7 @@ public class Student
         }
     }
     
-    public boolean getCredits()
+    public int getCredits()
     {
         return this.credits;
     }
