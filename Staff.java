@@ -11,37 +11,57 @@ public class Staff {
 		this.surname=surname;
 		this.id=id;
 		this.address=address;
-		listLecture = new ObjectArrayList();
-		listCoord = new ObjectArrayList();
+		lectureModules = new ObjectArrayList();
+		coordinateModules = new ObjectArrayList();
 	}
 	
-	public void AppendModuleLecture(Module newModule) {
+	public void appendModuleLecture(Module newModule) {
 		lectureModules.add(newModule);
 	}
 	
-	public boolean RemoveModuleLecture(Module existingModule) {
-		//check they lecture it - return false
-		//remove it return true
+	public boolean removeModuleLecture(Module existingModule) {
+		if (this.lectureModules.contains(existingModule)) {
+			this.lectureModules=this.lectureModules.remove(existingModule);
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
-	public void AppendModuleCoord(Module newmodule) {
+	public void appendModuleCoordinate(Module newModule) {
 		coordinateModules.add(newModule);
 	}
 	
-	public boolean RemoveModuleCoord(Module module) {
-		//check they coord it - return false
-		//remove it return true
-	} 
-	
-	public int NumberOfLectureModules() {
-		//return size from lect array list
+	public boolean removeModuleCoordinate(Module existingModule) {
+		if (this.coordinateModules.contains(existingModule)) {
+			this.coordinateModules=this.coordinateModules.remove(existingModule);
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
-	public int NumberOfCoordModules() {
-		//return size from coord array list
+	public int numberOfLectureModules() {
+		return lectureModules.size()
 	}
 	
-	public boolean Equals(Staff staff) {
-		//check all variables of staff with this.staff
+	public int numberOfCoordinateModules() {
+		return coordinateModules.size()
+	}
+	
+	public boolean equals(Object staff) {
+		if (!(staff instanceof Staff)) {
+			return false;
+		}
+		else {
+			if (staff.forename.equals(forename) && staff.surname.equals(surname) && staff.id==id && staff.address.equals(address) && staff.lectureModules.equals(lectureModules) && staff.coordinateModules.equals(coordinateModules)) {
+				return true;	
+			}
+			else {
+				return false;	
+			}
+		}
 	}
 }
