@@ -2,7 +2,7 @@
 /**
  * Write a description of class Student here.
  * 
- * @author (your name) 
+ * @author (Tom Fullalove) 
  * @version (a version number or a date)
  */
 public class Student
@@ -11,7 +11,7 @@ public class Student
     String surname;
     long id;
     String address;
-    ObjectArrayList[] modules;
+    ObjectArrayList modules;
     int credits;
 
     public Student(String forename, String surname, long id, String address)
