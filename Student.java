@@ -43,7 +43,7 @@ public class Student
         if (this.modules.contains(existingModule))
         {
             this.credits-=existingModule.getCredits();
-            this.modules=this.modules.remove(existingModule);
+            this.modules.remove(existingModule); // modifies in-place and returns boolean success!
             return true;
         }
         else
@@ -57,14 +57,15 @@ public class Student
         return this.credits;
     }
     
-    public boolean equals(Object objStudent)
+    public boolean equals(Object object)
     {
-        if (!(objStudent instanceof Student))
+        if (!(object instanceof Student))
         {
             return false;
         }
         else
         {
+			Student objStudent = (Student) object;
             if (objStudent.forename.equals(this.forename) && objStudent.surname.equals(this.surname) && objStudent.id==this.id && objStudent.address.equals(this.address) && objStudent.credits==this.credits && objStudent.modules.equals(this.modules))
             {
                 return true;

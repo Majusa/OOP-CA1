@@ -1,18 +1,26 @@
 public class Module {
   
-  public Module(String code, String name, int credits)
+  public Module(String code, String name, int credits) {}
   
-  addLecturer()
+  public void addLecturer(Staff staff) {}
   
-  remLecturer()
+  public boolean remLecturer(Staff staff) {
+	return false; //placeholder
+  }
   
-  addCoordinator()
+  public void addCoordinator(Staff staff) {}
   
-  remCoordinator()
+  public boolean remCoordinator(Staff staff) {
+	return false; //placeholder
+  }
   
-  addStudent()
+  public void addStudent(Student student) {}
   
-  remStudent()
+  public boolean remStudent(Student student) {
+	return false; //placeholder
+  }
   
-  getCreds()
+  public int getCredits() {
+	return 0; //placeholder
+  }
 }

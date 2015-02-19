@@ -1,4 +1,5 @@
 public class Staff {
+
 	String forename;
 	String surname;
 	long id;
@@ -21,7 +22,7 @@ public class Staff {
 	
 	public boolean removeModuleLecture(Module existingModule) {
 		if (this.lectureModules.contains(existingModule)) {
-			this.lectureModules=this.lectureModules.remove(existingModule);
+			this.lectureModules.remove(existingModule); //Returns boolean anyway :P
 			return true;
 		}
 		else {
@@ -35,7 +36,7 @@ public class Staff {
 	
 	public boolean removeModuleCoordinate(Module existingModule) {
 		if (this.coordinateModules.contains(existingModule)) {
-			this.coordinateModules=this.coordinateModules.remove(existingModule);
+			this.coordinateModules.remove(existingModule); //Again, this returns boolean
 			return true;
 		}
 		else {
@@ -44,18 +45,19 @@ public class Staff {
 	}
 	
 	public int numberOfLectureModules() {
-		return lectureModules.size()
+		return lectureModules.size();
 	}
 	
 	public int numberOfCoordinateModules() {
-		return coordinateModules.size()
+		return coordinateModules.size();
 	}
 	
-	public boolean equals(Object staff) {
-		if (!(staff instanceof Staff)) {
+	public boolean equals(Object object) {
+		if (!(object instanceof Staff)) {
 			return false;
 		}
 		else {
+			Staff staff = (Staff) object;
 			if (staff.forename.equals(forename) && staff.surname.equals(surname) && staff.id==id && staff.address.equals(address) && staff.lectureModules.equals(lectureModules) && staff.coordinateModules.equals(coordinateModules)) {
 				return true;	
 			}
