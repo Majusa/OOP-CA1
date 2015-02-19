@@ -22,7 +22,7 @@ public class Staff {
 	
 	public boolean removeModuleLecture(Module existingModule) {
 		if (this.lectureModules.contains(existingModule)) {
-			this.lectureModules.remove(existingModule); //Returns boolean anyway :P
+			this.lectureModules.remove(existingModule);
 			return true;
 		}
 		else {
@@ -36,7 +36,7 @@ public class Staff {
 	
 	public boolean removeModuleCoordinate(Module existingModule) {
 		if (this.coordinateModules.contains(existingModule)) {
-			this.coordinateModules.remove(existingModule); //Again, this returns boolean
+			this.coordinateModules.remove(existingModule);
 			return true;
 		}
 		else {

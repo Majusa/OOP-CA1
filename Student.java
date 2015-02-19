@@ -43,7 +43,7 @@ public class Student
         if (this.modules.contains(existingModule))
         {
             this.credits-=existingModule.getCredits();
-            this.modules.remove(existingModule); // modifies in-place and returns boolean success!
+            this.modules.remove(existingModule);
             return true;
         }
         else
