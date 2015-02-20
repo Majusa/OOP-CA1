@@ -1,26 +1,45 @@
 public class Module {
+    
+    String code;
+    String name;
+    int credits;
+    ObjectArrayList lecturerList;
+    ObjectArrayList coordinatorList;
+    
+    
+    public Module(String code, String name, int credits) {
+        this.code = code;
+        this.name = name;
+        this.credits = credits;
+        lecturerList = new ObjectArrayList();
+        coordinatorList = new ObjectArrayList();
+    }
   
-  public Module(String code, String name, int credits) {}
+    public void addLecturer(Staff newStaff) {
+        newStaff.appendModuleLecture(this);
+    }
   
-  public void addLecturer(Staff staff) {}
+    public boolean remLecturer(Staff existingStaff) {
+        return (existingStaff.removeModuleLecture(this));
+    }
   
-  public boolean remLecturer(Staff staff) {
-	return false; //placeholder
-  }
+    public void addCoordinator(Staff existingStaff) {
+        existingStaff.appendModuleCoordinate(this);
+    }
   
-  public void addCoordinator(Staff staff) {}
+    public boolean remCoordinator(Staff existingStaff) {
+        return (existingStaff.removeModuleCoordinate(this));
+    }
   
-  public boolean remCoordinator(Staff staff) {
-	return false; //placeholder
-  }
+    public void addStudent(Student newStudent) {
+        newStudent.enroll(this);
+    }
   
-  public void addStudent(Student student) {}
+    public boolean remStudent(Student existingStudent) {
+        return (existingStudent.unEnroll(this));
+    }
   
-  public boolean remStudent(Student student) {
-	return false; //placeholder
-  }
-  
-  public int getCredits() {
-	return 0; //placeholder
-  }
+    public int getCredits() {
+        return this.credits; //placeholder
+    }
 }
