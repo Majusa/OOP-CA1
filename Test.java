@@ -58,17 +58,19 @@ public class Test {
 		// Can we enroll Matt on to a module which would increase his credits past 120?
 		int someCredits = matt.getCredits();
 		assert someCredits > 0;
-		Module allYourCredits("AYC9001", "All your credits are belong to us", 120);
+		Module allYourCredits = new Module("AYC9001", "All your credits are belong to us", 120);
 		assert !matt.enroll(allYourCredits);       // Enroll should fail
 		assert !(matt.getCredits() > someCredits); // Matt should not get more credits
 		
 		// Can we remove staff and students from modules they are not part of?
-		Module weaving = ("UBW1024", "Underwater Basket Weaving", -15);
+		Module weaving = new Module("UBW1024", "Underwater Basket Weaving", -15);
 		assert !egor.unEnroll(weaving);
 		assert !jonathan.removeModuleLecture(weaving);
-		assert !ricahrd.removeModuleCoordinate(weaving);
+		assert !richard.removeModuleCoordinate(weaving);
 		assert !weaving.remStudent(ben);
 		assert !weaving.remLecturer(zena);
 		assert !weaving.remCoordinator(yiming);
+		
+		System.out.println("All good!");
 	}
 }
