@@ -17,7 +17,9 @@ public class Staff {
 	}
 	
 	public void appendModuleLecture(Module newModule) {
-		lectureModules.add(newModule);
+		if !(this.lectureModules.contains(existingModule)) {
+			lectureModules.add(newModule);
+		}
 	}
 	
 	public boolean removeModuleLecture(Module existingModule) {
@@ -31,7 +33,9 @@ public class Staff {
 	}
 	
 	public void appendModuleCoordinate(Module newModule) {
-		coordinateModules.add(newModule);
+		if !(this.lectureModules.contains(existingModule)) {
+			coordinateModules.add(newModule);
+		}
 	}
 	
 	public boolean removeModuleCoordinate(Module existingModule) {
@@ -53,7 +57,7 @@ public class Staff {
 	}
 	
 	public boolean equals(Object object) {
-		if (!(object instanceof Staff)) {
+		if !(object instanceof Staff) {
 			return false;
 		}
 		else {
