@@ -32,9 +32,16 @@ public class Student
         }
         else
         {
-            this.modules.add(newModule);
-            this.credits+=newModule.getCredits();
-            return true;
+            if !(this.modules.contains(newModule))
+            {
+        	this.modules.add(newModule);
+            	this.credits+=newModule.getCredits();
+            	return true;
+            }
+            else
+            {
+            	return false;
+            }
         }
     }
     
@@ -65,7 +72,7 @@ public class Student
         }
         else
         {
-			Student objStudent = (Student) object;
+	    Student objStudent = (Student) object;
             if (objStudent.forename.equals(this.forename) && objStudent.surname.equals(this.surname) && objStudent.id==this.id && objStudent.address.equals(this.address) && objStudent.credits==this.credits && objStudent.modules.equals(this.modules))
             {
                 return true;
