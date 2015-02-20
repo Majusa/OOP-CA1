@@ -1,7 +1,7 @@
 
 /**
  * The Student class can gain and lose modules by its methods while handling the credits that the modules come with.
- * There is also a equals method to check if two students' attributes are identical
+ * There is also an equals method to check if two students' attributes are identical
  * 
  * @author (Tom Fullalove)
  */
