@@ -26,7 +26,7 @@
 	
 	//Functions used to handle lectured modules
 	public void appendModuleLecture(Module newModule) {
-		if !(this.lectureModules.contains(newModule)) {
+		if (!(this.lectureModules.contains(newModule))) {
 			lectureModules.add(newModule);
 		}
 	}
@@ -43,7 +43,7 @@
 	
 	//Functions used to handle coordinated modules
 	public void appendModuleCoordinate(Module newModule) {
-		if !(this.lectureModules.contains(newModule)) {
+		if (!(this.lectureModules.contains(newModule))) {
 			coordinateModules.add(newModule);
 		}
 	}
@@ -69,7 +69,7 @@
 	
 	//Function to check if the given Staff and this Staff have all ettributes equal
 	public boolean equals(Object object) {
-		if !(object instanceof Staff) {
+		if (!(object instanceof Staff)) {
 			//need to return false here else we cannot cast it to a Staff
 			return false;
 		}

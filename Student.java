@@ -33,7 +33,7 @@ public class Student
         }
         else
         {
-            if !(this.modules.contains(newModule))
+            if (!(this.modules.contains(newModule)))
             {
             	//Valid NEW module has been given so we add it
         	this.modules.add(newModule); 
